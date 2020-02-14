@@ -6,6 +6,7 @@ set number
 set scrolloff=3
 set tabstop=4
 set shiftwidth=4
+set lazyredraw
 
 " Folding
 set foldmethod=indent
@@ -14,7 +15,12 @@ set foldlevel=2
 set foldnestmax=1
 
 " Auto Indent
-nnoremap == gg=G<C-o>
+nnoremap == :call AutoIndentDocument()<cr>
+function! AutoIndentDocument()
+	let view = winsaveview()
+	execute "normal! gg=G<C-o>"
+	call winrestview(view)
+endfunction
 
 " Plugins
 call plug#begin('~/.nvim/plugged')
@@ -36,8 +42,8 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " File Browser

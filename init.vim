@@ -14,7 +14,7 @@ set foldlevel=2
 set foldnestmax=1
 
 " Auto Indent
-nnoremap == gg=G<C-o><C-o>
+nnoremap == gg=G<C-o>
 
 " Plugins
 call plug#begin('~/.nvim/plugged')

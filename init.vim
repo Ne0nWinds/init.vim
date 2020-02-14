@@ -17,10 +17,16 @@ set foldnestmax=1
 " Auto Indent
 nnoremap == :call AutoIndentDocument()<cr>
 function! AutoIndentDocument()
-	let view = winsaveview()
+	let l:view = winsaveview()
 	execute "normal! gg=G<C-o>"
 	call winrestview(view)
 endfunction
+
+" Disable Built-In Vim Plugins
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_2html_plugin = 1
 
 " Plugins
 call plug#begin('~/.nvim/plugged')
@@ -47,7 +53,6 @@ function! s:check_back_space() abort
 endfunction
 
 " File Browser
-let loaded_netrwPlugin = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1

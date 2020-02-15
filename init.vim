@@ -27,6 +27,7 @@ let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
 let g:loaded_2html_plugin = 1
+let g:loaded_sql_completion = 1
 
 " Plugins
 call plug#begin('~/.nvim/plugged')

@@ -62,3 +62,7 @@ let NERDTreeMinimalUI = 1
 set termguicolors
 colorscheme codedark
 let g:airline_theme = 'codedark'
+
+" Airline Extension
+let g:airline#extensions#fugitiveline#enabled = 1
+let g:airline#extensions#coc#enabled = 1

@@ -60,11 +60,11 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> gh :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+	if &filetype != 'vim'
+		call CocAction('doHover')
+	else
+		execute 'h '.expand('<cword>')
+	endif
 endfunction
 
 " File Browser

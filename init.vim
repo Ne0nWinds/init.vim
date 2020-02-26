@@ -3,10 +3,12 @@ set mouse=a
 set clipboard+=unnamedplus
 set updatetime=500
 set number
+set nowrap
 set scrolloff=3
 set tabstop=4
 set shiftwidth=4
 set lazyredraw
+nnoremap <C-n> :set hlsearch!<CR>
 
 " Folding
 set foldmethod=indent

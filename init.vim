@@ -8,7 +8,8 @@ set scrolloff=3
 set tabstop=4
 set shiftwidth=4
 set lazyredraw
-nnoremap <C-n> :set hlsearch!<CR>
+nnoremap <silent><C-n> :set hlsearch!<CR>
+nnoremap <silent><C-T> :set expandtab!<CR>
 
 " Folding
 set foldmethod=indent
@@ -60,12 +61,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> gh :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-	if &filetype != 'vim'
-		call CocAction('doHover')
+	if &filetype == 'vim' || &filetype == 'sh'
+		execute 'normal! K'
 	else
-		execute 'h '.expand('<cword>')
+		call CocAction('doHover')
 	endif
 endfunction
 

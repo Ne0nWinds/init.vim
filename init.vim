@@ -9,7 +9,7 @@ set tabstop=4
 set shiftwidth=4
 set lazyredraw
 nnoremap <silent><C-n> :set hlsearch!<CR>
-nnoremap <silent><C-T> :set expandtab!<CR>
+nnoremap <silent><C-t> :set expandtab!<CR>
 
 " Folding
 set foldmethod=indent

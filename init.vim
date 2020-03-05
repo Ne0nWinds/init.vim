@@ -9,7 +9,17 @@ set tabstop=4
 set shiftwidth=4
 set lazyredraw
 nnoremap <silent><C-n> :set hlsearch!<CR>
-nnoremap <silent><C-t> :set expandtab!<CR>
+
+" Toggle Soft Tabs
+nnoremap <C-t> :call ExpandTab()<CR>
+function! ExpandTab()
+	set expandtab!
+	if &expandtab == 1
+		echo "Soft Tabs Enabled"
+	else
+		echo "Soft Tabs Disabled"
+	endif
+endfunction
 
 " Folding
 set foldmethod=indent
@@ -18,7 +28,7 @@ set foldlevel=2
 set foldnestmax=1
 
 " Auto Indent
-nnoremap == :call AutoIndentDocument()<cr>
+nnoremap == :call AutoIndentDocument()<CR>
 function! AutoIndentDocument()
 	let l:view = winsaveview()
 	execute "normal! gg=G<C-o>"

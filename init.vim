@@ -25,6 +25,16 @@ function! AutoIndentDocument()
 	call winrestview(view)
 endfunction
 
+" Better Manual Indent
+vnoremap < <V'>
+vnoremap > >V'>
+
+" Alt moving
+nnoremap <M-k> :m . -2<CR>
+nnoremap <M-j> :m . +1<CR>
+vnoremap <M-k> :m '< -2<CR>gv=gv
+vnoremap <M-j> :m '> +1<CR>gv=gv
+
 " Disable Built-In Vim Plugins
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1

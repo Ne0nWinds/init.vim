@@ -11,7 +11,7 @@ set lazyredraw
 nnoremap <silent><C-n> :set hlsearch!<CR>
 
 " Toggle Soft Tabs
-nnoremap <C-t> :call ExpandTab()<CR>
+nnoremap <M-s> :call ExpandTab()<CR>
 function! ExpandTab()
 	set expandtab!
 	if &expandtab == 1
@@ -20,6 +20,18 @@ function! ExpandTab()
 		echo "Soft Tabs Disabled"
 	endif
 endfunction
+
+" Window Tab Controls
+nnoremap <silent><M-t> :tabnew<CR>
+nnoremap <M-1> 1gt
+nnoremap <M-2> 2gt
+nnoremap <M-3> 3gt
+nnoremap <M-4> 4gt
+nnoremap <M-5> 5gt
+nnoremap <M-6> 6gt
+nnoremap <M-7> 7gt
+nnoremap <M-8> 8gt
+nnoremap <M-9> 9gt
 
 " Folding
 set foldmethod=indent

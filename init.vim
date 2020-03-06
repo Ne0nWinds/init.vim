@@ -48,8 +48,8 @@ function! AutoIndentDocument()
 endfunction
 
 " Better Manual Indent
-vnoremap < <V'>
-vnoremap > >V'>
+vmap < <V'>
+vmap > >V'>
 
 " Alt moving
 nnoremap <M-k> :m . -2<CR>

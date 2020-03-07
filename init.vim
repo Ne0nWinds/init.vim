@@ -8,7 +8,11 @@ set scrolloff=3
 set tabstop=4
 set shiftwidth=4
 set lazyredraw
+set ignorecase
+set smartcase
 nnoremap <silent><C-n> :set hlsearch!<CR>
+inoremap <silent><C-p> <Esc>pa
+tnoremap <Esc> <C-\><C-n>
 
 " Toggle Soft Tabs
 nnoremap <M-s> :call ExpandTab()<CR>

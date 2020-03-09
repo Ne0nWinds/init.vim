@@ -138,3 +138,6 @@ let g:airline_theme = 'codedark'
 " Airline Extension
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_extensions = ["coc", "tabline", "fugitiveline"]
+let g:airline_section_c = "%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%"

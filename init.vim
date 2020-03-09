@@ -3,6 +3,7 @@ set mouse=a
 set clipboard+=unnamedplus
 set updatetime=500
 set number
+set relativenumber
 set nowrap
 set scrolloff=3
 set tabstop=4
@@ -13,6 +14,16 @@ set smartcase
 nnoremap <silent><C-n> :set hlsearch!<CR>
 inoremap <silent><C-p> <Esc>pa
 tnoremap <Esc> <C-\><C-n>
+
+" Restore Last Cursor Position
+function! ResCur()
+	if line("'\"") <= line("$")
+		normal! g`"
+		normal! zz
+		return 1
+	endif
+endfunction
+autocmd BufWinEnter * call ResCur()
 
 " Toggle Soft Tabs
 nnoremap <M-s> :call ExpandTab()<CR>
@@ -47,19 +58,21 @@ set foldnestmax=1
 nnoremap == :call AutoIndentDocument()<CR>
 function! AutoIndentDocument()
 	let l:view = winsaveview()
-	execute "normal! gg=G<C-o>"
+	normal! gg=G
 	call winrestview(view)
 endfunction
 
 " Better Manual Indent
-vmap < <V'>
-vmap > >V'>
+vmap < <gvh
+vmap > >gvl
+vmap <M-l> >
+vmap <M-h> <
 
 " Alt moving
-nnoremap <M-k> :m . -2<CR>
-nnoremap <M-j> :m . +1<CR>
-vnoremap <M-k> :m '< -2<CR>gv=gv
-vnoremap <M-j> :m '> +1<CR>gv=gv
+nmap <silent><M-k> :<C-U>execute "m . " expand(v:count1 * -1 - 1)<CR>:normal! ==<CR>
+nmap <silent><M-j> :<C-U>execute "m . " expand(v:count1)<CR>:normal! ==<CR>
+vmap <silent><M-k> :<C-U>execute "'<,'>m '< " . expand(v:count1 * -1 - 1)<CR>gv=gv
+vmap <silent><M-j> :<C-U>execute "'<,'>m '> +" . expand(v:count1)<CR>gv=gv
 
 " Disable Built-In Vim Plugins
 let g:loaded_netrw = 1
@@ -70,11 +83,11 @@ let g:loaded_sql_completion = 1
 
 " Plugins
 call plug#begin('~/.nvim/plugged')
-	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'preservim/nerdtree'
+	Plug 'tpope/vim-surround'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'vim-airline/vim-airline'
 	Plug 'tomasiser/vim-code-dark'
@@ -100,7 +113,7 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
 	if &filetype == 'vim' || &filetype == 'sh'
-		execute 'normal! K'
+		normal! K
 	else
 		call CocAction('doHover')
 	endif

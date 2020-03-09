@@ -67,6 +67,8 @@ vmap < <gvh
 vmap > >gvl
 vmap <M-l> >
 vmap <M-h> <
+nmap <M-l> >>
+nmap <M-h> <<
 
 " Alt moving
 nmap <silent><M-k> :<C-U>execute "m . " expand(v:count1 * -1 - 1)<CR>:normal! ==<CR>
@@ -139,5 +141,4 @@ let g:airline_theme = 'codedark'
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_extensions = ["coc", "tabline", "fugitiveline"]
-let g:airline_section_c = "%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%"
+let g:airline_section_c = "%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"

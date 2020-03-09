@@ -1,0 +1,5 @@
+{
+	"javascript.format.semicolons": "insert",
+	"javascript.preferences.quoteStyle": "auto",
+	"suggest.minTriggerInputLength": 2
+}

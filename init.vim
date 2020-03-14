@@ -142,5 +142,6 @@ let g:airline_theme = 'codedark'
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_section_c = "%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
 let g:airline#extensions#tabline#formatter = 'unique_tail'

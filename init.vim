@@ -19,8 +19,9 @@ tnoremap <Esc> <C-\><C-n>
 function! ResCur()
 	if line("'\"") <= line("$")
 		normal! g`"
-		normal! zz
-		return 1
+		if line(".") < winheight('%') - line('$')
+			normal! zz
+		endif
 	endif
 endfunction
 autocmd BufWinEnter * call ResCur()
@@ -142,3 +143,4 @@ let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_c = "%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
+let g:airline#extensions#tabline#formatter = 'unique_tail'

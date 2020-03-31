@@ -99,6 +99,7 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'vim-airline/vim-airline'
 	Plug 'tomasiser/vim-code-dark'
+	Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Auto Completion

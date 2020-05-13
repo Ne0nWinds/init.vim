@@ -132,7 +132,18 @@ endfunction
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
-nnoremap <silent><Space> :NERDTreeToggle<cr>
+
+let g:currentpwd = getcwd()
+function! ToggleNERDTree()
+	let l:pwd = getcwd()
+	if g:currentpwd != pwd
+		let g:currentpwd = pwd
+		NERDTreeToggleVCS
+	else
+		NERDTreeToggle
+	endif
+endfunction
+nmap <silent><Space> :call ToggleNERDTree()<CR>
 
 " Theme
 set termguicolors

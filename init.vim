@@ -8,6 +8,7 @@ set nowrap
 set scrolloff=3
 set tabstop=4
 set shiftwidth=4
+set shiftround
 set lazyredraw
 set ignorecase
 set smartcase
@@ -95,6 +96,7 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'jackguo380/vim-lsp-cxx-highlight'
 	Plug 'preservim/nerdtree'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'vim-airline/vim-airline'

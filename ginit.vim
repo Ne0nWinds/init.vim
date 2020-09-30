@@ -1,3 +1,3 @@
 " For nvim-qt
-GuiPopupmenu 0
+GuiPopupmenu 00
 GuiTabline 0

@@ -16,6 +16,7 @@ nnoremap <silent><C-n> :set hlsearch!<CR>
 inoremap <silent><C-p> <Esc>pa
 tnoremap <Esc> <C-\><C-n>
 nmap Y y$
+nmap <F9> :make<CR>
 
 " Restore Last Cursor Position
 function! ResCur()

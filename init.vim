@@ -104,6 +104,7 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'tomasiser/vim-code-dark'
 	Plug 'sheerun/vim-polyglot'
+	Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " Auto Completion
@@ -153,6 +154,10 @@ nmap <silent><Space> :call ToggleNERDTree()<CR>
 set termguicolors
 colorscheme codedark
 let g:airline_theme = 'codedark'
+
+" Ctrl + P
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Airline Extension
 let g:airline#extensions#fugitiveline#enabled = 1

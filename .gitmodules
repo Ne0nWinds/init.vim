@@ -1,0 +1,33 @@
+[submodule "pack/base-plugins/start/vim-surround"]
+	path = pack/base-plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/base-plugins/start/vim-code-dark"]
+	path = pack/base-plugins/start/vim-code-dark
+	url = https://github.com/tomasiser/vim-code-dark
+[submodule "pack/base-plugins/start/vim-fugitive"]
+	path = pack/base-plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/base-plugins/start/vim-repeat"]
+	path = pack/base-plugins/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "pack/base-plugins/start/coc.nvim"]
+	path = pack/base-plugins/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "pack/base-plugins/start/vim-lsp-cxx-highlight"]
+	path = pack/base-plugins/start/vim-lsp-cxx-highlight
+	url = https://github.com/jackguo380/vim-lsp-cxx-highlight.git
+[submodule "pack/base-plugins/start/nerdtree"]
+	path = pack/base-plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "pack/base-plugins/start/nerdtree-git-plugin"]
+	path = pack/base-plugins/start/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "pack/base-plugins/start/vim-airline"]
+	path = pack/base-plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "pack/base-plugins/start/vim-polyglot"]
+	path = pack/base-plugins/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "pack/base-plugins/start/ctrlp.vim"]
+	path = pack/base-plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

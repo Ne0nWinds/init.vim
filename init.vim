@@ -91,21 +91,6 @@ let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
 let g:loaded_node_provider = 0
 
-" Plugins
-call plug#begin('~/.nvim/plugged')
-	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-repeat'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'jackguo380/vim-lsp-cxx-highlight'
-	Plug 'preservim/nerdtree'
-	Plug 'Xuyuanp/nerdtree-git-plugin'
-	Plug 'vim-airline/vim-airline'
-	Plug 'tomasiser/vim-code-dark'
-	Plug 'sheerun/vim-polyglot'
-	Plug 'ctrlpvim/ctrlp.vim'
-call plug#end()
-
 " Auto Completion
 inoremap <silent><expr> <TAB>
 	\ pumvisible() ? "\<C-n>" :
